@@ -1,7 +1,7 @@
 {
   "ios_min_ver": "1.0.0",
   "aos_min_ver": "1.0.0",
-  "show_google": false,
+  "show_google": true,
   "ios_url": "https://www.naver.com",
   "aos_url": "https://www.naver.com"
 }
