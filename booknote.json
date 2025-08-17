@@ -1,5 +1,6 @@
 {
-  "min_ver": "1.0.0",
+  "ios_min_ver": "1.0.0",
+  "aos_min_ver": "1.0.0",
   "ios_url": "",
   "aos_url": ""
 }
