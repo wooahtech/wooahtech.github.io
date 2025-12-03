@@ -1,270 +1,1108 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="keywords"
+      content="우아텍, 데이터 분석, 생산성 앱, 채팅분석, 연애분석, 모바일청첩장"
+    />
+    <meta
+      name="description"
+      content="데이터로 당신의 관계와 삶을 돌봅니다 - 우아텍 주식회사"
+    />
+    <meta name="author" content="우아텍" />
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+    <title>우아텍 - 데이터로 당신의 관계와 삶을 돌봅니다</title>
 
-  <title>우아텍</title>
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <!-- slider stylesheet -->
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <style>
+      /* WantedSans Font */
+      @font-face {
+        font-family: "WantedSans";
+        font-weight: 400;
+        font-style: normal;
+        src: url("fonts/WantedSans-Regular.woff2") format("woff2");
+        font-display: swap;
+      }
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      @font-face {
+        font-family: "WantedSans";
+        font-weight: 500;
+        font-style: normal;
+        src: url("fonts/WantedSans-Medium.woff2") format("woff2");
+        font-display: swap;
+      }
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
+      @font-face {
+        font-family: "WantedSans";
+        font-weight: 600;
+        font-style: normal;
+        src: url("fonts/WantedSans-SemiBold.woff2") format("woff2");
+        font-display: swap;
+      }
 
-<body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              우아텍
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
+      @font-face {
+        font-family: "WantedSans";
+        font-weight: 700;
+        font-style: normal;
+        src: url("fonts/WantedSans-Bold.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "WantedSans";
+        font-weight: 800;
+        font-style: normal;
+        src: url("fonts/WantedSans-ExtraBold.woff2") format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "WantedSans";
+        font-weight: 900;
+        font-style: normal;
+        src: url("fonts/WantedSans-Black.woff2") format("woff2");
+        font-display: swap;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #3b82f6;
+        --dark-color: #0f172a;
+        --light-color: #f8fafc;
+        --gray-color: #64748b;
+      }
+
+      body {
+        font-family: "WantedSans", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--dark-color);
+        background-color: #ffffff;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* 헤더 */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem 0;
+        background: rgba(22, 22, 22, 0.25);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 40px;
+        width: auto;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        position: relative;
+        overflow: hidden;
+        padding: 8rem 2rem 4rem;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(37, 99, 235, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(59, 130, 246, 0.1) 0%,
+            transparent 50%
+          );
+        animation: float 15s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(30px, 30px);
+        }
+      }
+
+      .hero-content {
+        max-width: 1000px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 800;
+        margin-bottom: 2rem;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.25rem, 2vw, 1.75rem);
+        opacity: 0.85;
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        animation: fadeInUp 1s ease-out 0.2s both;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-indicator::after {
+        content: "↓";
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+
+      /* About Section */
+      .about {
+        padding: 10rem 2rem;
+        background: white;
+        position: relative;
+      }
+
+      .about::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-color),
+          transparent
+        );
+      }
+
+      .about-image-container {
+        max-width: 900px;
+        margin: 4rem auto 0;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 6rem;
+      }
+
+      .section-title h2 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: var(--dark-color);
+        letter-spacing: -0.02em;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        font-size: 1.125rem;
+        color: var(--gray-color);
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-weight: 400;
+      }
+
+      /* Services Carousel */
+      .services {
+        padding: 10rem 2rem;
+        background: #f8f8f8;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .services-carousel-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .swiper {
+        width: 100%;
+        padding: 2rem 0 4rem;
+      }
+
+      .swiper-slide {
+        height: auto;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 30px 80px rgba(37, 99, 235, 0.15);
+      }
+
+      .service-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      }
+
+      .service-image {
+        width: 100%;
+        height: 450px;
+        object-fit: contain;
+        padding: 2rem;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .service-card:hover .service-image {
+        transform: scale(1.05);
+      }
+
+      .service-content {
+        padding: 2.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-number {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        width: 56px;
+        height: 56px;
+        background: var(--primary-color);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.5rem;
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+        z-index: 10;
+      }
+
+      .service-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        color: var(--dark-color);
+        letter-spacing: -0.01em;
+      }
+
+      .service-description {
+        font-size: 1.0625rem;
+        color: var(--gray-color);
+        line-height: 1.8;
+        flex: 1;
+      }
+
+      /* Swiper Custom Styles */
+      .swiper-pagination {
+        bottom: 0 !important;
+      }
+
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background: var(--gray-color);
+        opacity: 0.3;
+        transition: all 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 32px;
+        border-radius: 6px;
+        background: var(--primary-color);
+        opacity: 1;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 56px;
+        height: 56px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: var(--primary-color);
+        transform: scale(1.1);
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 20px;
+        font-weight: 900;
+        color: var(--dark-color);
+        transition: color 0.3s ease;
+      }
+
+      .swiper-button-next:hover::after,
+      .swiper-button-prev:hover::after {
+        color: white;
+      }
+
+      /* Stats Section */
+      .stats {
+        padding: 8rem 2rem;
+        background: var(--dark-color);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stats::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 50%,
+            rgba(37, 99, 235, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 50%,
+            rgba(59, 130, 246, 0.08) 0%,
+            transparent 50%
+          );
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .stat-item {
+        position: relative;
+        padding: 2rem;
+      }
+
+      .stat-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .stat-item h3 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+      }
+
+      .stat-item p {
+        font-size: 1.125rem;
+        opacity: 0.8;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+
+      /* Footer */
+      footer {
+        background: #0a0f1a;
+        color: white;
+        padding: 5rem 2rem 2rem;
+        border-top: 1px solid rgba(59, 130, 246, 0.1);
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 2;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9375rem;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: var(--accent-color);
+      }
+
+      .company-name {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: white;
+        letter-spacing: -0.02em;
+      }
+
+      .company-tagline {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.875rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 6rem 1.5rem 3rem;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .about {
+          padding: 6rem 1.5rem;
+        }
+
+        .services {
+          padding: 6rem 1.5rem;
+        }
+
+        .section-title {
+          margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .service-image {
+          height: 350px;
+        }
+
+        .stats {
+          padding: 5rem 1.5rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .stat-item h3 {
+          font-size: 3rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Animation on scroll */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="images/logo_imweb_white.png" alt="우아텍" />
+        </div>
       </div>
     </header>
-    <!-- end header section -->
-    <!-- slider section -->
-    <section class=" slider_section position-relative">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>데이터로 당신의<br />관계와 삶을 돌봅니다</h1>
+        <p class="hero-subtitle">
+          일상의 모든 순간을 더 의미있게 만드는 스마트한 솔루션
+        </p>
+      </div>
+      <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
       <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col">
-                  <div class="detail-box">
-                    <div>
-                      <h2>
-                        스타트업을 위한 AI 파트너
-                      </h2>
-                      <h1>
-                        우아텍
-                      </h1>
-                    </div>
-                  </div>
+        <div class="section-title fade-in">
+          <h2>우아텍이 만드는 가치</h2>
+          <p>
+            개인의 생산성 향상부터 소중한 관계 관리까지, 데이터 기반 인사이트로
+            일상을 더 스마트하게 만듭니다.
+          </p>
+        </div>
+        <div class="about-image-container fade-in">
+          <img src="images/woman.jpg" alt="우아텍 서비스를 사용하는 모습" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="services-carousel-container">
+        <div class="section-title fade-in">
+          <h2>우리의 서비스</h2>
+          <p>
+            사용자 한 분 한 분의 니즈를 파악하여<br />실생활에 도움이 되는 앱을
+            만듭니다
+          </p>
+        </div>
+
+        <!-- Swiper Carousel -->
+        <div class="swiper servicesSwiper">
+          <div class="swiper-wrapper">
+            <!-- Service 1 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">01</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/2_chatting.png"
+                    alt="채팅분석기"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">채팅분석기</h3>
+                  <p class="service-description">
+                    대화 속에 숨은 패턴을 발견하세요. 멤버별 대화 빈도, 시간대별
+                    활동량, 자주 사용하는 키워드까지. 데이터로 보는 우리의 대화
+                    습관, 더 나은 커뮤니케이션의 시작입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">02</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/7_lovechat.png"
+                    alt="연애분석기"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">연애분석기</h3>
+                  <p class="service-description">
+                    우리 사이는 지금 어떤가요? 연인 간의 대화를 분석해 연락
+                    빈도, 대화 패턴, 서로에게 자주 쓰는 말을 통해 관계의 온도를
+                    측정합니다. 데이터가 알려주는 호감도 인사이트로 더 깊은
+                    관계를 만들어보세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">03</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/3_booknote.png"
+                    alt="북노트"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">북노트</h3>
+                  <p class="service-description">
+                    책에서 얻은 인사이트, 놓치지 마세요. 독서하며 떠오른 생각을
+                    간편하게 기록하고 정리할 수 있습니다. AI 추천으로 당신이
+                    놓치고 있던 좋은 책들도 만나보세요. 독서의 가치를 배가시키는
+                    똑똑한 노트.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">04</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/5_dear_check.png"
+                    alt="디어 체크리스트"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">디어 체크리스트</h3>
+                  <p class="service-description">
+                    결혼 준비, 복잡하지 않아요. 예식장 답사부터 준비물 체크까지,
+                    체크리스트로 한눈에 정리하세요. 사진과 메모로 쉽게 비교하고,
+                    중요한 순간을 놓치지 않도록 관리합니다. 모바일로 언제
+                    어디서나 간편하게.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">05</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/6_study.png"
+                    alt="암기단어장"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">암기단어장</h3>
+                  <p class="service-description">
+                    시험 공부, 외국어 학습, 자격증 준비까지. 짬나는 시간마다
+                    꺼내보는 나만의 단어장. 헷갈리는 단어는 체크해서 집중
+                    학습하고, 반복 학습으로 확실하게 암기하세요. 언제 어디서든
+                    학습의 연속성을 유지합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">06</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/1_successmate.png"
+                    alt="성공메이트"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">성공메이트</h3>
+                  <p class="service-description">
+                    목표 달성을 체계적으로. A부터 D등급까지, 중요도에 따라
+                    목표를 분류하고 관리하세요. 작은 목표부터 큰 꿈까지,
+                    단계별로 이루어가는 성취의 즐거움. 당신의 성공을 함께하는
+                    든든한 파트너입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 7 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">07</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/4_copynote.png"
+                    alt="복붙노트"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">복붙노트</h3>
+                  <p class="service-description">
+                    업무 효율, 클릭 한 번으로. 자주 쓰는 답변, 복잡한 메뉴얼,
+                    반복되는 문구들을 저장해두고 필요할 때 바로 복사하세요. 머리
+                    속을 복잡하게 만들지 마세요. 스마트한 업무는 복붙노트와
+                    함께.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 8 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">08</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/8_nailpick.png"
+                    alt="네일픽"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">네일픽</h3>
+                  <p class="service-description">
+                    완벽한 네일 사진, 이제 3초면 충분해요. AI가 당신의 네일 아트
+                    중 가장 예쁜 사진만 자동으로 골라주고, 전문가 수준의 보정을
+                    자동으로 완료합니다. 인스타에 올릴 완벽한 순간을 놓치지
+                    마세요. 네일픽으로 당신의 아름다움을 더욱 빛나게 표현하세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 9 -->
+            <div class="swiper-slide">
+              <div class="service-card">
+                <div class="service-number">09</div>
+                <div class="service-image-wrapper">
+                  <img
+                    src="images/mobile/9_personal_color.jpg"
+                    alt="퍼스널컬러 색상표"
+                    class="service-image"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">퍼스널컬러 색상표</h3>
+                  <p class="service-description">
+                    퍼스널 컬러 진단, 이제 앱으로 간편하게. 20만원짜리 컨설팅
+                    없이도 내가 직접 나에게 어울리는 컬러를 찾아보세요. 봄,
+                    여름, 가을, 겨울 톤을 쉽게 진단하고, 나만의 색상표를 만들어
+                    패션과 메이크업에 활용하세요. 나를 더욱 돋보이게 만드는
+                    컬러를 발견하세요.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
       </div>
     </section>
-    <!-- end slider section -->
-  </div>
 
-  <!-- do section -->
-
-  <section class="do_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          What we do
-        </h2>
-        <p>
-          <ol>
-            <li>맞춤형 AI 솔루션: 귀사의 고유한 요구사항에 맞춘 AI 시스템 설계 및 구축</li>
-            <li>데이터 기반 인사이트: 고급 분석 및 머신러닝으로 비즈니스 의사결정 최적화</li>
-            <li>업무 자동화: AI 기반 프로세스 자동화로 운영 효율성 극대화</li>
-            <li>고객 경험 혁신: 개인화된 AI 서비스로 고객 만족도 향상</li>
-          </ol>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- end do section -->
-
-  <!-- who section -->
-
-  <section class="who_section ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="img-box">
-            <img src="images/who-img.jpg" alt="">
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item fade-in">
+            <h3>5+</h3>
+            <p>년간의 서비스 운영</p>
           </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                WHO WE ARE?
-              </h2>
-            </div>
-            <p>
-              다양한 스타트업들과의 AI 솔루션 구축 경험으로 기업의 과제를 해결하고 있습니다. 고객 한 분 한 분과 니즈사항 파악을 위해 대화를 하고, 오류 없는 정확한 프로그램을 만들어 드립니다.
-            </p>
+          <div class="stat-item fade-in">
+            <h3>10+</h3>
+            <p>출시된 프로젝트</p>
+          </div>
+          <div class="stat-item fade-in">
+            <h3>10K+</h3>
+            <p>만족한 사용자</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- end who section -->
-
-
-  <!-- work section -->
-  <section class="work_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          작업물
-        </h2>
-        <p>
-          맞춤형 AI 모델 개발, 자연어 처리 및 컴퓨터 비전 솔루션, AI 챗봇 및 가상 비서 구축 등을 진행하였습니다.
-        </p>
-      </div>
-      <div class="work_container layout_padding2">
-        <div class="box b-1">
-          <img src="images/p1.jpg" alt="">
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="company-name">우아텍</div>
+          <p class="company-tagline">데이터로 당신의 관계와 삶을 돌봅니다</p>
         </div>
-        <div class="box b-2">
-          <img src="images/p2.jpg" alt="">
 
+        <div class="footer-section">
+          <h3>회사 정보</h3>
+          <p><strong>상호명</strong><br />우아텍 주식회사</p>
+          <p><strong>사업자번호</strong><br />888-81-02580</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>오시는 길</h3>
+          <p>경기도 안산시 단원구 고잔로 55,<br />B102-162호</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- end work section -->
-
-  <!-- client section -->
-
-  <!-- end client section -->
-
-  <!-- target section -->
-  <section class="target_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="detail-box">
-            <h2>
-              5+
-            </h2>
-            <h5>
-              Years of Business
-            </h5>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="detail-box">
-            <h2>
-              10+
-            </h2>
-            <h5>
-              Projects Delivered
-            </h5>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="detail-box">
-            <h2>
-              10+
-            </h2>
-            <h5>
-              Satisfied Customers
-            </h5>
-          </div>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 우아텍 주식회사. All rights reserved.</p>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- end target section -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
-  <!-- contact section -->
-
-
-  <!-- end contact section -->
-
-
-  <!-- info section -->
-  <section class="info_section ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_contact">
-            <h5>
-              About
-            </h5>
-            <div>
-              <div class="img-box">
-                <img src="images/location-white.png" width="18px" alt="">
-              </div>
-              <p>
-                주소 : 경기도 안산시 단원구 고잔로 55, B102-162호
-              </p>
-            </div>
-            <div>
-              <div class="img-box">
-                <img src="images/location-white.png" width="18px" alt="">
-              </div>
-              <p>
-                사업자 번호 : 888-81-02580
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info_section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- owl carousel script 
-    -->
-  <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 0,
-      navText: [],
-      center: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
+    <!-- Scripts -->
+    <script>
+      // Swiper Initialization
+      const swiper = new Swiper(".servicesSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
         },
-        1000: {
-          items: 3
-        }
-      }
-    });
-  </script>
-  <!-- end owl carousel script -->
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        },
+        effect: "slide",
+        speed: 800,
+      });
 
-</body>
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
 
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Counter Animation for Stats
+      const animateCounter = (element) => {
+        const target = parseInt(element.textContent.replace(/\D/g, ""));
+        const suffix = element.textContent.replace(/[0-9]/g, "");
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target + suffix;
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current) + suffix;
+          }
+        }, 16);
+      };
+
+      // Observe stat items for counter animation
+      const statObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target.querySelector("h3");
+              if (counter && !counter.classList.contains("animated")) {
+                counter.classList.add("animated");
+                animateCounter(counter);
+              }
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll(".stat-item").forEach((el) => {
+        statObserver.observe(el);
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
