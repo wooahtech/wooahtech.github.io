@@ -3,19 +3,19 @@
     {
       "main": "결혼 준비는 복잡하니까",
       "sub": "청첩장은 쉽게, 디어로그",
-      "img": "",
+      "img": "https://github.com/wooahtech/wooahtech.github.io/blob/main/images/banner1.png?raw=true",
       "link": "https://dearlog.com/?utm_source=dearchecklist"
     },
     {
       "main": "웨딩 사진은 빼고 싶다면",
       "sub": "사진 없이 깔끔하게, 디어로그",
-      "img": "",
+      "img": "https://github.com/wooahtech/wooahtech.github.io/blob/main/images/banner2.png?raw=true",
       "link": "https://dearlog.com/?utm_source=dearchecklist"
     },
     {
       "main": "남들과 똑같은 디자인이 싫다면",
       "sub": "나만의 스타일로 색다르게, 디어로그",
-      "img": "",
+      "img": "https://github.com/wooahtech/wooahtech.github.io/blob/main/images/banner3.png?raw=true",
       "link": "https://dearlog.com/?utm_source=dearchecklist"
     }
   ]
